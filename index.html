@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
+    <title>Stormender</title>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div class="container">
+        <h2 id="start">This time the storm <i>will</i> end...</h2>
+        <h1  id="storm">Storm</h1>
+        <img src="akali2.png" alt="">
+        <h1 id="ender">Ender</h1>
+        <h2 id="end">She will make sure of it</h2>
+    </div>
+    <audio src='thunder.wav'></audio>
+    
+
+
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+<script>
+    let sound = new Howl({
+      src: ['bass.wav'],
+      volume: 1.0,
+      onend: function () {
+        let sound = new Howl({
+            src: ['thunder.wav']
+        });
+        sound.play();
+      }
+    });
+    let sound2 = new Howl({
+            src: ['light rain.wav']
+        });
+    
+
+        setTimeout(function() {
+    sound.play();
+    setTimeout(function() {
+        sound2.play();
+    }, 5500);
+}, 1000);
+</script>
+
+</body>
+</html>

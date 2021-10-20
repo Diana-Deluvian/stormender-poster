@@ -1,0 +1,125 @@
+@import url("http://fonts.cdnfonts.com/css/jot-spray-paint");
+@import url("https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: gray;
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  overflow: hidden;
+}
+/*
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: start;
+  align-items: center;
+}
+
+.stormender {
+  display: relative;
+  border: 1px solid black;
+}
+
+img {
+  border: 1px solid black;
+}
+
+.stormender-img {
+  position: absolute;
+  border: 1px solid black;
+  width: 50%;
+  left: 25%;
+}
+
+.stormender-img:nth-child(3) {
+  z-index: 2;
+  transition: all 1s;
+}
+.stormender-img:nth-child(3):hover {
+  transform: translateX(-40%) translateY(8%);
+}
+*/
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    "a b c"
+    "d b e"
+    "x b g";
+  background-color: black;
+  justify-items: center;
+  grid-template-columns: fit-content(30%) fit-content(40%) fit-content(30%);
+}
+
+img {
+  grid-area: b;
+  object-fit: scale-down;
+  width: 100%;
+  max-height: 100%;
+}
+
+#start {
+  grid-area: a;
+}
+
+#end {
+  grid-area: g;
+}
+
+#storm {
+  grid-area: d;
+
+  font-family: "Jot Spray Paint", sans-serif;
+  text-transform: uppercase;
+}
+
+#ender {
+  grid-area: e;
+
+  font-family: "Jot Spray Paint", sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 7vw;
+  color: cornflowerblue;
+}
+
+/*h2 {
+  font-family: "Roboto", cursive;
+  font-size: 2rem;
+}
+
+h1,
+#end {
+  display: none;
+}
+*/
+
+h2 {
+  font-family: "Qahiri", cursive;
+  font-size: 3vw;
+  color: rebeccapurple;
+}
+
+#cursor {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+}
