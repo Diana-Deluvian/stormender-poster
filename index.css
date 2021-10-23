@@ -1,10 +1,16 @@
-@import url("http://fonts.cdnfonts.com/css/jot-spray-paint");
+@font-face {
+  font-family: JotSpray;
+  src: url("fonts/JotSpray.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Qahiri;
+  src: url("fonts/Qahiri-Regular.ttf") format("truetype");
+}
 
 @font-face {
   font-family: Roboto;
   src: url("/fonts/Roboto-Regular.ttf") format("truetype");
-  font-family: Qahiri;
-  src: url("fonts/Qahiri-Regular.ttf") format("truetype");
 }
 
 * {
@@ -92,14 +98,14 @@ img {
 #storm {
   grid-area: d;
 
-  font-family: "Jot Spray Paint", sans-serif;
+  font-family: "JotSpray", sans-serif;
   text-transform: uppercase;
 }
 
 #ender {
   grid-area: e;
 
-  font-family: "Jot Spray Paint", sans-serif;
+  font-family: "JotSpray", sans-serif;
   text-transform: uppercase;
 }
 
@@ -108,18 +114,13 @@ h1 {
   color: cornflowerblue;
 }
 
-h2 {
-  font-family: "Roboto", cursive;
-  font-size: 2rem;
-}
-
 h1,
 #end {
   display: none;
 }
 
 h2 {
-  font-family: "Qahiri", cursive;
+  font-family: "Roboto", cursive;
   font-size: 3vw;
   color: rebeccapurple;
 }
@@ -138,7 +139,7 @@ h2 {
   width: 100vw;
   height: 100vh;
   background-color: white;
-  animation: example 5s linear 1 forwards;
+  animation: example 3s linear 1 forwards;
   display: none;
 }
 
@@ -148,5 +149,35 @@ h2 {
   }
   to {
     opacity: 0;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    height: 10%;
+    flex-grow: 1;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h1,
+  #end {
+    display: none;
+  }
+  h1,
+  #end {
+    opacity: 0;
+    display: block;
   }
 }
