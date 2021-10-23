@@ -14,55 +14,17 @@
     <div class="container">
         <h2 id="start">This time the storm <i>will</i> end...</h2>
         <h1  id="storm">Storm</h1>
-        <img id="akali1" src="akali.png">
-        <img id="akali2" src="akali2.png" alt="">
+        <img id="akali" src="images/akali.png">
+        <img id="transitionAkali" src="images/transitionAkali.png" alt="">
         <h1 id="ender">Ender</h1>
         <h2 id="end">She will make sure of it</h2>
     </div>
-    <audio src='thunder.wav'></audio>
     
-
-
-    <script src="index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+    <script src="index.js"></script>
+    <script src="spray.js"></script>
 <script>
-    let bassIntro = new Howl({
-      src: ['bass.wav'],
-      volume: 1.0,
-      onend: function () {
-        let thunder = new Howl({
-            src: ['thunder.wav']
-        });
-        thunder.play();
-      }
-    });
-    let rainBackground = new Howl({
-            src: ['light rain.wav']
-        });
     
-
-setTimeout(function() {
-    bassIntro.play();
-    setTimeout(function() {
-        document.getElementById("transition").style.display = "block";
-        document.getElementById("end").style.display = "block";
-        document.getElementById("storm").style.display = "block";
-        document.getElementById("ender").style.display = "block";
-        document.getElementsByClassName("container")[0].style.backgroundColor = "black";
-        document.getElementById("akali1").style.display = "none";
-        document.getElementById("akali2").style.display = "block";
-        document.getElementById("start").style.fontFamily = "Qahiri";
-        document.getElementById("end").style.fontFamily = "'Qahiri'";
-        document.getElementById("end").style.opacity = "1";
-        document.getElementById("storm").style.opacity = "1";
-        document.getElementById("ender").style.opacity = "1";
-
-    }, 3750);
-    setTimeout(function() {
-        document.getElementById("cursor").style.display = "block";
-        rainBackground.play();
-    }, 5500);
-}, 1000);
 
 </script>
 
