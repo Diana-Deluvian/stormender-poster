@@ -9,11 +9,13 @@
     <title>Stormender</title>
 </head>
 <body>
+    <div id="transition"></div>
     <div id="cursor"></div>
     <div class="container">
         <h2 id="start">This time the storm <i>will</i> end...</h2>
         <h1  id="storm">Storm</h1>
-        <img src="akali2.png" alt="">
+        <img id="akali1" src="akali.png">
+        <img id="akali2" src="akali2.png" alt="">
         <h1 id="ender">Ender</h1>
         <h2 id="end">She will make sure of it</h2>
     </div>
@@ -24,27 +26,39 @@
     <script src="index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 <script>
-    let sound = new Howl({
+    let bassIntro = new Howl({
       src: ['bass.wav'],
       volume: 1.0,
       onend: function () {
-        let sound = new Howl({
+        let thunder = new Howl({
             src: ['thunder.wav']
         });
-        sound.play();
+        thunder.play();
       }
     });
-    let sound2 = new Howl({
+    let rainBackground = new Howl({
             src: ['light rain.wav']
         });
     
 
-        setTimeout(function() {
-    sound.play();
+setTimeout(function() {
+    bassIntro.play();
     setTimeout(function() {
-        sound2.play();
+        document.getElementById("transition").style.display = "block";
+        document.getElementById("end").style.display = "block";
+        document.getElementById("storm").style.display = "block";
+        document.getElementById("ender").style.display = "block";
+        document.getElementsByClassName("container")[0].style.backgroundColor = "black";
+        document.getElementById("akali1").style.display = "none";
+        document.getElementById("akali2").style.display = "block";
+
+    }, 3750);
+    setTimeout(function() {
+        document.getElementById("cursor").style.display = "block";
+        rainBackground.play();
     }, 5500);
 }, 1000);
+
 </script>
 
 </body>
