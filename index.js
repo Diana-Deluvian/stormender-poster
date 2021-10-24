@@ -41,6 +41,15 @@ setTimeout(function() {
     end.style.opacity = "1";
     storm.style.opacity = "1";
     ender.style.opacity = "1";
+    
+    //change icon to new transitionAkali as well, name is just transition due to icon weirdness
+    let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = 'images/transition.ico';
+    document.getElementsByTagName('head')[0].appendChild(link);
+
+
 
 
 }, 3750);
